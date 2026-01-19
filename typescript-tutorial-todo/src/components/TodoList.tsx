@@ -1,7 +1,7 @@
 import React from "react";
 import { Todo } from "../models/models";
 import SingleTodo from "./SingleTodo";
-import { Droppable } from "react-beautiful-dnd";
+import { Droppable } from "@hello-pangea/dnd";
 
 interface props {
   todos: Array<Todo>;
@@ -44,9 +44,8 @@ const TodoList: React.FC<props> = ({
           <div
             ref={provided.innerRef}
             {...provided.droppableProps}
-            className={`todos  ${
-              snapshot.isDraggingOver ? "dragcomplete" : "remove"
-            }`}
+            className={`todos  ${snapshot.isDraggingOver ? "dragcomplete" : "remove"
+              }`}
           >
             <span className="todos__heading">Completed Tasks</span>
             {CompletedTodos?.map((todo, index) => (
